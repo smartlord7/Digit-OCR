@@ -12,5 +12,9 @@ classdef OCRConst
         PERCEPTRON_FILTER_TRAIN_FUNCTION = 'trainc';
         PERCEPTRON_FILTER_ADAPT_FUNCTION = 'learnp';
         N_CLASSIFIER_INPUTS = 256;
+        FILTER_TARGET_DATA_PATH = 'PerfectArial.mat';
+        FILTER_TARGET_DATA_PROP = 'Perfect';
+        INPUT_DATA_PATH = 'P.mat';
+        INPUT_DATA_PROP = 'P';
     end
 end
