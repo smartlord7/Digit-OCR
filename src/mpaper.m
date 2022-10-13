@@ -14,7 +14,7 @@
 % Purpose 2- this file can also be used to draw characters for testing the
 % classifiers.For that:
 %   - comment the lines save P.mat P (207) and save ind.mat ind (219)
-%   - uncomment the live feval(options.fun,data)(230)
+%   - uncomment the live f eval(options.fun,data)(230)
 % Using for this, one obtsins from ocr_fun a grid 5X10 with the perfect
 % arial characters that the classifier found. THen we have side by side tha
 % characters we draw in mpaper and the characters classified, so we can see
@@ -204,7 +204,7 @@ function Dn(varargin)
  % We want to save only P, and for that we must specify that we only want
  % to save P; for that we must write
  
-              % save P.mat P
+              save(OCRConst.TRAIN_INPUT_DATA_PATH + "P" + datestr(now,'mm-dd-yyyy HH-MM') + ".mat", "P", "-mat");
            
  % and a mat file called P is created having inside the matrix P.Then we can
  % load P, and rename the matrix P, by clicking on P with the right mouse
@@ -227,7 +227,7 @@ function Dn(varargin)
  % If you are not using use this file for classification, comment the following
  % line feval:
  %
-            feval(options.fun,data);
+            % feval(options.fun,data);
              
  % feval calculates the function options.fun, that by default is ocr_fun that 
  %calls the function myclassify that must be written by the user.
