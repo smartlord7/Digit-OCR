@@ -15,7 +15,7 @@ filter = configure(filter, transpose(zeros(nInputs)), transpose(zeros(nOutputs))
 filter.biasConnect = false(nLayers, 1);
 
 for i=1:1:nLayers - 1
-    filter.layers{1}.transferFcn = actFun;
+    filter.layers{i}.transferFcn = actFun;
 end
 
 weights = wMin + (wMax - wMin) .* rand(nOutputs, nInputs);
