@@ -24,8 +24,7 @@ filter.IW{1,1} = weights;
 if trainType == "batch"
     filter.trainFcn = trainFun;
 else
-    filter.trainFcn = "trainc";
-    filter.adaptFcn = trainFun;
+    
 end
 
 filter.performParam.lr = learn_rate;

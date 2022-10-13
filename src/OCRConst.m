@@ -3,9 +3,11 @@ classdef OCRConst
     %   Detailed explanation goes here
     
     properties (Constant)
-        PATH_LOG_FILE = "log.txt";
-        PATH_NNETS_DIR = "../nnets";
+        PATH_LOG_FILE = "../out/log.txt";
+        PATH_NNETS_DIR = "../out/nnets/";
+        PATH_CSV_FILE = ".../out/stats.csv"
         N_FILTER_INPUTS = 256;
+        N_CELLS_MPAPER = 50;
         N_FILTER_LAYERS = 1;
         N_FILTER_OUTPUTS = 256;
         FILTER_WEIGHT_INIT_MIN = 0;
@@ -16,13 +18,13 @@ classdef OCRConst
         TRAIN_TYPE = [true false];
         SEED = (0:10:100)
         TRAIN_F_INC = ["learnp" "learnpn" "learngd" "learngdm" "learnh" "learnhd" "learnwh"];
-        TRAIN_F_BATCH = ["traingd" "traingda" "traingdm" "trainlm" "trainscg"];
+        TRAIN_F_BATCH = ["traingd" "traingda" "traingdm" "trainscg"];
         ACT_F_FILTER = ["hardlim" "purelin" "logsig"];
         ACT_F_CLASS = ["hardlim" "purelin" "logsig"];
-        EPOCHS_FILTER = (2:10:100);
-        EPOCHS_CLASS = (2:10:100);
+        EPOCHS_FILTER = (5:10:50);
+        EPOCHS_CLASS = (5:10:50);
         LEARN_RATE_MIN_FILTER = 0.1
-        LEARN_RATE_STEP_FILTER = 0.05;
+        LEARN_RATE_STEP_FILTER = 0.1;
         LEARN_RATE_MAX_FILTER = 0.7;
         LEARN_RATE_FILTER = (OCRConst.LEARN_RATE_MIN_FILTER:OCRConst.LEARN_RATE_STEP_FILTER:OCRConst.LEARN_RATE_MAX_FILTER);
         LEARN_RATE_MIN_CLASS = 0.1;
@@ -35,7 +37,7 @@ classdef OCRConst
         N_CLASSIFIER_INPUTS = 256;
         FILTER_TARGET_DATA_PATH = "PerfectArial.mat";
         FILTER_TARGET_DATA_PROP = "Perfect";
-        TRAIN_INPUT_DATA_PATH = "../input/train/";
+        TRAIN_INPUT_DATA_PATH = "../in/train/";
         INPUT_DATA_PROP = "P";
     end
 end
