@@ -20,8 +20,8 @@ function [] = trainClassifierInner(seed, nLayers, nHiddenNeurons, p, t, logFile)
                             nHiddenNeurons = 0;
                         end
                         classifier = buildClassifier(seed, nLayers, nHiddenNeurons, tType, trainFunction, actFunction, lr, epochs);
-                        classifier.trainParam.showWindow = 0;
                         [classifier, info] = train(classifier, p, t);
+                        y = classifier(p);
                         fileName = sprintf(OCRConst.PATH_CLASSIFIER_NN_DIR + "/NN_%.5f_%.5f~%d_%s_%s^%s_%.3f_%d", info.best_perf, info.best_vperf, seed, actFunction, trainFunction, tType, lr, epochs);
                         logMsg = sprintf("Classifier trained. Tperf: %.3f, Vperf: %.3f", info.best_perf, info.best_vperf);
                         fprintf(logMsg);

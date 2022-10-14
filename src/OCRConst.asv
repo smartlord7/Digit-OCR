@@ -6,8 +6,8 @@ classdef OCRConst
         PATH_LOG_FILE = "../out/log.txt";
         PATH_FILTER_NN_DIR = "../out/nn/filter/";
         PATH_CLASSIFIER_NN_DIR = "../out/nn/classifier/";
-        PATH_CSV_FILE = "../out/filter.csv"
-        HEADER_CSV_FILTER = "seed,activationFunction,trainType,trainFunction,maxEpochs,learnRate,tPerformance,vPerformance\n"
+        PATH_CSV_FILE = ".../out/stats.csv"
+        HEADER_CSV 
         N_FILTER_INPUTS = 256;
         N_CLASSES = 10;
         N_CELLS_MPAPER = 50;
@@ -26,7 +26,7 @@ classdef OCRConst
         ACT_F_FILTER = ["hardlim" "purelin" "logsig"];
         ACT_F_CLASS = ["hardlim" "purelin" "logsig" "softmax"];
         EPOCHS_FILTER = (10:20:70);
-        EPOCHS_CLASS = (5000:1000:10000);
+        EPOCHS_CLASS = (5:10:55);
         LEARN_RATE_MIN_FILTER = 0.1
         LEARN_RATE_STEP_FILTER = 0.2;
         LEARN_RATE_MAX_FILTER = 0.7;
