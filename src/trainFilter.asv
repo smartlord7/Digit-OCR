@@ -28,15 +28,14 @@ for seed=OCRConst.SEED
                         filter = buildFilter(seed, tType, trainFunction, actFunction, lr, epochs);
                         filter.trainParam.showWindow = 0;
                         [filter, info] = train(filter, p, t);                      
+                        fileName = sprintf(OCRConst.PATH_FILTER_NN_DIR + "/NNF_%.5f_%.5f~%d_%s_%s^%s_%.3f_%d",  min(info.perf), min(info.vperf), seed, actFunction, trainFunction, tType, lr, epochs);
                         logMsg = sprintf("Filter trained. Tperf: %.3f, Vperf: %.3f", min(info.perf), min(info.vperf));
                         y = filter(p);
-                        fileName = sprintf(OCRConst.PATH_CLASSIFIER_INPUT + "/OF_%.5f_%.5f~%d_%s_%s^%s_%.3f_%d",  min(info.perf), min(info.vperf), seed, actFunction, trainFunction, tType, lr, epochs);
-                        save(fileName + ".mat", "y", "-mat");
+                        save()
                         fprintf(logMsg);
                         fprintf(logFile, logMsg);                     
                         row = sprintf("%d,%s,%s,%s,%d,%.3f,%.5f,%.5f\n", seed, actFunction, trainFunction, tType, epochs, lr, min(info.perf), min(info.vperf));
                         fprintf(csvFile, row);
-                        fileName = sprintf(OCRConst.PATH_FILTER_NN_DIR + "/NNF_%.5f_%.5f~%d_%s_%s^%s_%.3f_%d",  min(info.perf), min(info.vperf), seed, actFunction, trainFunction, tType, lr, epochs);
                         save(fileName + ".mat", "filter", "info", "-mat");
                     end
                 end

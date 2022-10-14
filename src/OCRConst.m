@@ -6,8 +6,9 @@ classdef OCRConst
         PATH_LOG_FILE = "../out/log.txt";
         PATH_FILTER_NN_DIR = "../out/nn/filter/";
         PATH_CLASSIFIER_NN_DIR = "../out/nn/classifier/";
-        PATH_CSV_FILE = "../out/filter.csv"
-        HEADER_CSV_FILTER = "seed,activationFunction,trainType,trainFunction,maxEpochs,learnRate,tPerformance,vPerformance\n"
+        PATH_CSV_FILE = "../out/filter.csv";
+        PATH_CLASSIFIER_INPUT = "../in/train_seq";
+        HEADER_CSV_FILTER = "seed,activationFunction,trainType,trainFunction,maxEpochs,learnRate,tPerformance,vPerformance\n";
         N_FILTER_INPUTS = 256;
         N_CLASSES = 10;
         N_CELLS_MPAPER = 50;
