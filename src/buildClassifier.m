@@ -17,10 +17,9 @@ else
     classifier = feedforwardnet(nHiddenNeurons);
 end
 
-classifier = configure(classifier, transpose(zeros(nInputs)), transpose(zeros(nOutputs)));
 classifier.biasConnect = true(nLayers, 1);
 
-for i=1:1:nLayers - 1
+for i=1:1:nLayers
     classifier.layers{i}.transferFcn = actFun;
 end
 
@@ -33,13 +32,14 @@ end
 
 if trainType == "batch"
     classifier.trainFcn = trainFun;
+    classifier.trainParam.epochs = epochs;
 else
     classifier.trainFcn = "trainc";
     classifier.adaptFcn = trainFun;
+    classifier.trainParam.epochs = OCRConst.EPOCHS_TRAINC;
 end
 
 classifier.performParam.lr = learn_rate;
-classifier.trainParam.epochs = epochs;
 classifier.divideFcn = 'divideblock';
 classifier.divideParam.trainRatio = tRatio;
 classifier.divideParam.valRatio = vRatio;

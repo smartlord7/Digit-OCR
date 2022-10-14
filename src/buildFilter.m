@@ -14,7 +14,7 @@ filter = linearlayer;
 filter = configure(filter, transpose(zeros(nInputs)), transpose(zeros(nOutputs)));
 filter.biasConnect = false(nLayers, 1);
 
-for i=1:1:nLayers - 1
+for i=1:1:nLayers
     filter.layers{i}.transferFcn = actFun;
 end
 
@@ -23,13 +23,14 @@ filter.IW{1,1} = weights;
 
 if trainType == "batch"
     filter.trainFcn = trainFun;
+    filter.trainParam.epochs = epochs;
 else
     filter.trainFcn = "trainc";
     filter.adaptFcn = trainFun;
+    filter.trainParam.epochs = OCRConst.EPOCHS_TRAINC;
 end
 
 filter.performParam.lr = learn_rate;
-filter.trainParam.epochs = epochs;
 filter.divideFcn = 'divideblock';
 filter.divideParam.trainRatio = tRatio;
 filter.divideParam.valRatio = vRatio;
