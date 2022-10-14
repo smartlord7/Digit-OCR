@@ -24,8 +24,8 @@ classdef OCRConst
         TRAIN_F_BATCH = ["traingd" "traingda" "traingdm" "trainscg"];
         ACT_F_FILTER = ["hardlim" "purelin" "logsig"];
         ACT_F_CLASS = ["hardlim" "purelin" "logsig" "softmax"];
-        EPOCHS_FILTER = (5:10:50);
-        EPOCHS_CLASS = (5:10:50);
+        EPOCHS_FILTER = (5:10:55);
+        EPOCHS_CLASS = (5:10:55);
         LEARN_RATE_MIN_FILTER = 0.1
         LEARN_RATE_STEP_FILTER = 0.1;
         LEARN_RATE_MAX_FILTER = 0.7;
