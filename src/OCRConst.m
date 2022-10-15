@@ -3,6 +3,7 @@ classdef OCRConst
     %   Detailed explanation goes here
     
     properties (Constant)
+        PATH_UI_INPUT = "input_tmp.mat"
         PATH_LOG_FILE = "../out/log.txt";
         PATH_FILTER_NN_DIR = "../out/nn/filter/";
         PATH_CLASSIFIER_NN_DIR = "../out/nn/classifier/";
@@ -61,5 +62,7 @@ classdef OCRConst
         FILTER_TARGET_DATA_PROP = "Perfect";
         TRAIN_INPUT_DATA_PATH = "../in/train/";
         TRAIN_INPUT_DATA_PROP = "P";
+        ARCHITECTURE_CLASSIFIER = 0;
+        ARCHITECTURE_FILTER_AND_CLASSIFIER = 1
     end
 end
