@@ -20,7 +20,7 @@ end
 classifier.biasConnect = true(nLayers, 1);
 
 for i=1:1:nLayers
-    classifier.layers{i}.transferFcn = actFun;
+    classifier.layers{i}.transferFcn = actFun(i);
 end
 
 for i=1:1:nLayers - 1

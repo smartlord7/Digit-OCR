@@ -37,7 +37,7 @@ for seed=OCRConst.SEED
                         end
                         logMsg = sprintf("Filter trained. Tperf: %.3f, Vperf: %.3f", min(info.perf), min(info.vperf));
                         y = filter(p);
-                        fileName = sprintf(OCRConst.PATH_CLASSIFIER_INPUT + "/OF_%.5f_%.5f~%d_%s_%s^%s_%.3f_%d",  min(info.perf), min(info.vperf), seed, actFunction, trainFunction, tType, lr, epochs);
+                        fileName = sprintf(OCRConst.PATH_FILTER_INPUT + "/OF_%.5f_%.5f~%d_%s_%s^%s_%.3f_%d",  min(info.perf), min(info.vperf), seed, actFunction, trainFunction, tType, lr, epochs);
                         save(fileName + ".mat", "y", "-mat");
                         fprintf(logMsg);
                         fprintf(logFile, logMsg);                     

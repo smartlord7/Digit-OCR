@@ -1,5 +1,5 @@
-function [] = trainClassifier()
-    p = getTrainInputData();
+function [] = trainClassifier(isSeq)
+    p = getTrainInputData(isSeq);
     [nRows, nCols] = size(p);
     t = getClassifierTargetData(nCols / OCRConst.N_CLASSES);
     logFile = fopen(OCRConst.PATH_LOG_FILE, "w");
