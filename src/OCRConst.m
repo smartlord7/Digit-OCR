@@ -36,10 +36,10 @@ classdef OCRConst
         TRAIN_F_INC = [];
         TRAIN_F_BATCH = ["traingd" "traingda" "traingdm" "trainscg"];
         ACT_F_FILTER = ["radbas", "compet", "tribas"];
-        ACT_F_CLASS = ["purelin" "softmax" ;"logsig" "softmax" ; "elliotsig" "softmax"];
+        ACT_F_CLASS = ["purelin" "elliotsig"; "logsig" "elliotsig"; "purelin" "softmax" ;"logsig" "softmax" ; "elliotsig" "softmax"];
         EPOCHS_FILTER = 1000;
         EPOCHS_CLASS = 10000;
-        EPOCHS_TRAINC = 50;
+        EPOCHS_TRAINC = 10;
         LEARN_RATE_MIN_FILTER = 0.2
         LEARN_RATE_STEP_FILTER = 0.3;
         LEARN_RATE_MAX_FILTER = 1;
@@ -68,5 +68,6 @@ classdef OCRConst
         TRAIN_INPUT_DATA_PROP = "P";
         ARCHITECTURE_CLASSIFIER = 0;
         ARCHITECTURE_FILTER_AND_CLASSIFIER = 1
+        CLASS_LABELS = ["1" "2" "3" "4" "5" "6" "7" "8" "9" "0"];
     end
 end

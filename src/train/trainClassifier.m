@@ -3,10 +3,9 @@ function [] = trainClassifier(isSeq)
     [nRows, nCols] = size(p);
     t = getClassifierTargetData(nCols / OCRConst.N_CLASSES);
     logFile = fopen(OCRConst.PATH_LOG_FILE, "w");
-    csvFile = fopen(OCRConst.PATH_CSV_CLASSIFIER_FILE, "w");
+    csvFile = fopen(OCRConst.PATH_CSV_CLASSIFIER_SEQ_FILE, "w");
     fprintf(csvFile, OCRConst.HEADER_CSV_CLASSIFIER);
-    delete(OCRConst.PATH_CLASSIFIER_NN_DIR + ".*")
-    delete(OCRConst.PATH_CLASSIFIER_INPUT + ".*")
+    delete(OCRConst.PATH_CLASSIFIER_SEQ_NN_DIR + ".*")
     
     for seed=OCRConst.SEED
         for nLayers=OCRConst.N_CLASSIFIER_LAYERS
