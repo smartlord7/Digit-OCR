@@ -5,7 +5,6 @@ function [] = trainClassifier(isSeq)
     logFile = fopen(OCRConst.PATH_LOG_FILE, "w");
     csvFile = fopen(OCRConst.PATH_CSV_CLASSIFIER_SEQ_FILE, "w");
     fprintf(csvFile, OCRConst.HEADER_CSV_CLASSIFIER);
-    delete(OCRConst.PATH_CLASSIFIER_SEQ_NN_DIR + ".*")
     
     for seed=OCRConst.SEED
         for nLayers=OCRConst.N_CLASSIFIER_LAYERS

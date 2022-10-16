@@ -34,9 +34,9 @@ classdef OCRConst
         TRAIN_TYPE = [true false];
         SEED = (0:1:3)
         TRAIN_F_INC = [];
-        TRAIN_F_BATCH = ["traingd" "traingda" "traingdm" "trainscg"];
+        TRAIN_F_BATCH = ["trainscg"];
         ACT_F_FILTER = ["radbas", "compet", "tribas"];
-        ACT_F_CLASS = ["purelin" "elliotsig"; "logsig" "elliotsig"; "purelin" "softmax" ;"logsig" "softmax" ; "elliotsig" "softmax"];
+        ACT_F_CLASS = ["softmax"];
         EPOCHS_FILTER = 1000;
         EPOCHS_CLASS = 10000;
         EPOCHS_TRAINC = 10;
@@ -53,7 +53,7 @@ classdef OCRConst
         TEST_RATIO = 0;
         N_CLASSIFIER_INPUTS = 256;
         N_CLASSIFIER_OUTPUTS = 10;
-        N_CLASSIFIER_LAYERS = [1, 2];
+        N_CLASSIFIER_LAYERS = [1];                               
         N_CLASSIFIER_HIDDEN_NEURONS_MIN = 10
         N_CLASSIFIER_HIDDEN_NEURONS_STEP = 40;
         N_CLASSIFIER_HIDDEN_NEURONS_MAX = 130;

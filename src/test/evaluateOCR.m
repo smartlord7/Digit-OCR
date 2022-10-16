@@ -23,9 +23,10 @@ function [] = evaluateOCR()
             n2 = string(classifiersSeq(j).name);
             c = load(OCRConst.PATH_TEST_CLASSIFIER_SEQ_NN_DIR + n2).classifier;
             y = c(p);
-            n2 = n.replace("_", "|").replace("^", "@") + " > " + n2.replace("_", "|").replace("^", "@");
+            n2 = (n + " & " + n2);
+            n2 = n2.replace("_", "-").replace("^", "@").replace(".mat", "");
 
-            figure(1)
+            f = figure(1);
             plotconfusion(y, t)
             fh = gcf;
             ax = gca;
@@ -39,6 +40,7 @@ function [] = evaluateOCR()
             title("Filter + Classifier - Confusion Matrix");
             subtitle(n2, 'Fontsize',6)
             set(gcf,'color','w');
+            saveas(f, n2 + ".png", "png");
             hold off
         end
     end
@@ -51,7 +53,7 @@ function [] = evaluateOCR()
         m = max(y, [], 1);
         idx = int8((y == m));
 
-        figure(1)
+        f = figure(1)
         plotconfusion(idx, t)
         fh = gcf;
         ax = gca;
@@ -63,9 +65,11 @@ function [] = evaluateOCR()
         ax.XTickLabel = OCRConst.CLASS_LABELS;
         ax.YTickLabel = OCRConst.CLASS_LABELS;
         title("Classifier - Confusion Matrix");
-        subtitle(n.replace("_", "-").replace("^", "@"), 'Fontsize',6);
+        n = n.replace("_", "-").replace("^", "@").replace(".mat", "");
+        subtitle(n, 'Fontsize',6);
         set(gcf,'color','w');
-        hold off
+        hold off;
+        saveas(f, n + ".png", "png");
     end
 
 end

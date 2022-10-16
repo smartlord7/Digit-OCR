@@ -24,7 +24,6 @@ function [] = trainClassifierInner(seed, nLayers, nHiddenNeurons, p, t, logFile,
                         nHiddenNeurons = 0;
                     end
                     classifier = buildClassifier(seed, nLayers, nHiddenNeurons, tType, trainFunction, actFunction, lr, OCRConst.EPOCHS_CLASS);
-                    classifier.trainParam.showWindow = 0;
                     [classifier, info] = train(classifier, p, t);
                     y = classifier(p);
                     fileName = sprintf(OCRConst.PATH_CLASSIFIER_NN_DIR + "/NN_%.5f_%.5f~%d_%d_%d_%s_%s^%s_%.3f_%d", min(info.perf), min(info.vperf), seed, nLayers, nHiddenNeurons, join(actFunction, "-"), trainFunction, tType, lr, OCRConst.EPOCHS_CLASS);
