@@ -11,6 +11,10 @@ classdef OCRConst
         PATH_CSV_FILTER_FILE = "../out/filter.csv";
         PATH_CSV_CLASSIFIER_FILE = "../out/classifier.csv";
         PATH_CSV_CLASSIFIER_SEQ_FILE = "../out/classifier_seq.csv";
+        PATH_TEST_FILTER_NN_DIR = "../in/test/filter/";
+        PATH_TEST_CLASSIFIER_NN_DIR = "../in/test/classifier/";
+        PATH_TEST_CLASSIFIER_SEQ_NN_DIR = "../in/test/classifier_seq/";
+        PATH_TEST_INPUT = "../in/test/input/";
         PATH_CLASSIFIER_INPUT = "../in/train_seq/";
         PROP_CLASSIFIER_INPUT = "y";
         PATH_FILTER_INPUT = "../out/filter/"
