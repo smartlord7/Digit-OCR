@@ -204,7 +204,7 @@ function Dn(varargin)
  % We want to save only P, and for that we must specify that we only want
  % to save P; for that we must write
  
-              % save(OCRConst.TRAIN_INPUT_DATA_PATH + "P" + datestr(now,'mm-dd-yyyy HH-MM-ss') + ".mat", "P", "-mat");
+              save(OCRConst.TRAIN_INPUT_DATA_PATH + "P" + datestr(now,'mm-dd-yyyy HH-MM-ss') + ".mat", "P", "-mat");
            
  % and a mat file called P is created having inside the matrix P.Then we can
  % load P, and rename the matrix P, by clicking on P with the right mouse
@@ -227,7 +227,7 @@ function Dn(varargin)
  % If you are not using use this file for classification, comment the following
  % line feval:
  %
-            feval(options.fun,data);
+           % feval(options.fun,data);
              
  % feval calculates the function options.fun, that by default is ocr_fun that 
  %calls the function myclassify that must be written by the user.

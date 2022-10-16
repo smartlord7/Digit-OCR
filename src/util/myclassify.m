@@ -8,9 +8,10 @@ function [y] = myclassify(data, filled_inx)
 
     classifierNN = load(OCRStatic.setGetClassifierPath).classifier;
     y = classifierNN(p);
+    [r, c] = size(y);
     m = max(y, [], 1);
     idx = (y == m);
-    [row, col] = find(idx);
+    [row, col] = find(idx, c, 'first');
     
     y = row;
 end

@@ -27,8 +27,8 @@ function [] = trainClassifierInner(seed, nLayers, nHiddenNeurons, p, t, logFile,
                     classifier.trainParam.showWindow = 0;
                     [classifier, info] = train(classifier, p, t);
                     y = classifier(p);
-                    fileName = sprintf(OCRConst.PATH_CLASSIFIER_NN_DIR + "/NN_%.5f_%.5f~%d_%d_%d_%s_%s^%s_%.3f_%d", info.best_perf, info.best_vperf, seed, nLayers, nHiddenNeurons, join(actFunction, "-"), trainFunction, tType, lr, OCRConst.EPOCHS_CLASS);
-                    logMsg = sprintf("Classifier trained. Tperf: %.3f, Vperf: %.3f", info.best_perf, info.best_vperf);
+                    fileName = sprintf(OCRConst.PATH_CLASSIFIER_NN_DIR + "/NN_%.5f_%.5f~%d_%d_%d_%s_%s^%s_%.3f_%d", min(info.perf), min(info.vperf), seed, nLayers, nHiddenNeurons, join(actFunction, "-"), trainFunction, tType, lr, OCRConst.EPOCHS_CLASS);
+                    logMsg = sprintf("Classifier trained. Tperf: %.3f, Vperf: %.3f",min(info.perf), min(info.vperf));
                     fprintf(logMsg);
                     fprintf(logFile, logMsg);
                     row = sprintf("%d,%d,%d,%s,%s,%s,%.3f,%.5f,%.5f\n", seed, nLayers, nHiddenNeurons, join(actFunction, "-"), trainFunction, tType, lr, min(info.perf), min(info.vperf));
