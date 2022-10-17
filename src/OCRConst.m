@@ -62,7 +62,7 @@ classdef OCRConst
         CLASSIFIER_WEIGHT_INIT_MAX = 1;
         CLASSIFIER_BIAS_INIT_MIN = 0;
         CLASSIFIER_BIAS_INIT_MAX = 1;
-        FILTER_TARGET_DATA = "PerfectArial.mat";
+        FILTER_TARGET_DATA_PATH = "PerfectArial.mat";
         FILTER_TARGET_DATA_PROP = "Perfect";
         TRAIN_INPUT_DATA_PATH = "../in/train/";
         TRAIN_INPUT_DATA_PROP = "P";

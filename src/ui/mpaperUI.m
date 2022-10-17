@@ -125,7 +125,7 @@ else
   if ~isfield( options, 'del_dist'), options.del_dist = 0.01; end  
   
   figure;
-  set( gcf, 'WindowButtonDownFcn', 'mpaper(''Dn'')' );
+  set( gcf, 'WindowButtonDownFcn', 'mpaperUI(''Dn'')' );
   Cla;
   setappdata( gcf, 'options',options );
   setappdata( gcf, 'cells',cell(5,10) );
@@ -155,8 +155,8 @@ function Dn(varargin)
           
        case 'normal'  % left    if click in the left mouse button
           setappdata(gcf, 'last', [] );
-          set( gcf, 'WindowButtonMotionFcn', 'mpaper(''Plot'')' );
-          set( gcf, 'WindowButtonUpFcn', 'mpaper(''Up'')' );
+          set( gcf, 'WindowButtonMotionFcn', 'mpaperUI(''Plot'')' );
+          set( gcf, 'WindowButtonUpFcn', 'mpaperUI(''Up'')' );
           Plot
           
         case 'extend'  % middle  if click in the middle mouse button of in the combination hift+left button                   
@@ -227,7 +227,7 @@ function Dn(varargin)
  % If you are not using use this file for classification, comment the following
  % line feval:
  %
-            % feval(options.fun,data);
+            feval(options.fun,data);
              
  % feval calculates the function options.fun, that by default is ocr_fun that 
  %calls the function myclassify that must be written by the user.
